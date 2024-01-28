@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+
+PREFIX="/usr/X11R6"
+EXEC_PREFIX="${PREFIX}"
+
+BARHEIGHT=12
+FG_COLOUR="#eeeeee"
+BG_COLOUR="#000000"
+
+${EXEC_PREFIX}/bin/xsetroot -solid ${BG_COLOUR}
+
+if pgrep lemonbar > /dev/null; then
+    killall lemonbar
+fi
+
+monitors=$(xrandr | grep -o "^.* connected" | sed "s/ connected//" | wc -l)
+
+while true; do
+	reboot="%{F#b00035}%{A:reboot:} r %{A}%{F-}"
+	shutdown="%{F#b00035}%{A:shutdown -p now:} p %{A}%{F-}"
+	panel_layout="%{r}${reboot}/${shutdown}"
+	if [ $monitors -gt 1 ]; then
+        	echo "%{Sl}${panel_layout}%{Sf}${panel_layout} "
+   	else
+        	echo "${panel_layout} "
+    	fi
+done | /usr/local/bin/lemonbar -d -g x"${BARHEIGHT}" -B "${BGCOLOR}" -F "${FGCOLOR}" | sh > /dev/null 2>&1

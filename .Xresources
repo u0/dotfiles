@@ -8,47 +8,77 @@ Xft.hintstyle:  hintslight
 
 ! xterm ----------------------------------------------------------------------
 
-XTerm.termName: xterm-256color
-xterm*geometry:           80x25
-/* xterm*faceName: Misc Orp */
-/* xterm*faceSize: 9 */
-xterm*font: -misc-fixed-medium-r-semicondensed--13-120-75-75-C-60-iso10646-1
-xterm*boldMode: false
-xterm*utf8:               true
-xterm*eightBitInput:      true
-xterm*saveLines:          512
-xterm*ptyInitialErase:    true
-xterm*backarrowKeyIsErase: true
-xterm*scrollTtyKeypress:  true
-xterm*scrollTtyOutput:    false
-xterm*scrollBar:          false
-xterm*rightScrollBar:     true
-xterm*loginShell:         true
-xterm*jumpScroll:         true
-xterm*multiScroll:        true
-xterm*toolBar:            false
-xterm*charClass: 33:48, 35:48, 37:48, 42-43:48, 45-47:48, 58:48, 61:48, 63-64:48, 126:48
-xterm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
-*VT100*translations: #override Shift <Btn1Up>: exec-formatted("chrome '%t'", PRIMARY)
+XTerm.termName: 		xterm-256color
+xterm*geometry:           	80x25
+xterm*boldMode:			false
+xterm*utf8:               	true
+xterm*eightBitInput:      	true
+xterm*saveLines:          	512
+xterm*ptyInitialErase:    	true
+xterm*backarrowKeyIsErase: 	true
+xterm*scrollTtyKeypress:  	true
+xterm*scrollTtyOutput:    	false
+xterm*scrollBar:          	false
+xterm*rightScrollBar:     	true
+xterm*loginShell:         	true
+xterm*jumpScroll:         	true
+xterm*multiScroll:        	true
+xterm*toolBar:            	false
+xterm*charClass: 		33:48, 35:48, 37:48, 42-43:48, 45-47:48, 58:48, 61:48, 63-64:48, 126:48
+xterm*on3Clicks: 		regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+*VT100*translations: 		#override Shift <Btn1Up>: exec-formatted("chrome '%t'", PRIMARY)
 
 ! URxvt settings ---------------------------------------------------------------
-URxvt.font: xft:Cozette:antialias=false
+URxvt.font: 			xft:Cozette:antialias=false
 URxvt.boldFont:
-URxvt.scrollBar: false
+URxvt.scrollBar: 		false
 
-URxvt*cursorColor:                    #d1d4e0
-URxvt*scrollColor:                    #d1d4e0
-URxvt*highlightColor:                 #252936
-URxvt*highlightTextColor:             #C0C5CE
+URxvt*cursorColor:		#d1d4e0
+URxvt*scrollColor:		#d1d4e0
+URxvt*highlightColor:		#252936
+URxvt*highlightTextColor:	#C0C5CE
 
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: chrome
-URxvt.matcher.button: 1
+URxvt.perl-ext-common: 		default,matcher
+URxvt.url-launcher: 		chrome
+URxvt.matcher.button:		1
 
+! Xlogin settings -------------------------------------------------------------
+xlogin.Login.echoPasswd:	true
+xlogin.Login.fail:		ya dun goofed
+xlogin.Login.greeting:		Welcome back
+
+xlogin.Login.height:		200
+xlogin.Loginwidth:		400
+xlogin.Login.y:			320
+xlogin.Login.frameWidth:	10
+xlogin.Login.innerFramesWidth:	0
+
+xlogin.Login.background:	#000000
+xlogin.Login.foreground:	#eeeeee
+xlogin.Login.failColor:		#b00035
+xlogin.Login.inpColor:		#000000
+xlogin.Login.promptColor:	#eeeeee
+xlogin.Login.hiColor:		#000000
+xlogin.Login.shdColor:		#000000
+
+xlogin.Login.face:		Dina-11
+xlogin.Login.failFace:		Dina-11
+xlogin.Login.promptFace:	Dina-11
+
+! Xconsole settings -----------------------------------------------------------
+XConsole*background:	black
+XConsole*foreground:	white
+XConsole*borderWidth:	2
+XConsole&borderColor:	grey
+XConsole.text.geometry:	480x130
+XConsole.verbose:	true
+XConsole*iconic:	true
+XConsole*font:		fixed
+
+! Colour scheme settings ------------------------------------------------------
 ! special
 *.foreground:   #000000
 *.background:   #EEEEEE
-/* *.cursorColor:  #ffffff */
 
 ! black
 *.color0:       #000000

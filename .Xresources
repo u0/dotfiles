@@ -1,0 +1,84 @@
+! Xft settings ---------------------------------------------------------------
+
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+! xterm ----------------------------------------------------------------------
+
+XTerm.termName: xterm-256color
+xterm*geometry:           80x25
+/* xterm*faceName: Misc Orp */
+/* xterm*faceSize: 9 */
+xterm*font: -misc-fixed-medium-r-semicondensed--13-120-75-75-C-60-iso10646-1
+xterm*boldMode: false
+xterm*utf8:               true
+xterm*eightBitInput:      true
+xterm*saveLines:          512
+xterm*ptyInitialErase:    true
+xterm*backarrowKeyIsErase: true
+xterm*scrollTtyKeypress:  true
+xterm*scrollTtyOutput:    false
+xterm*scrollBar:          false
+xterm*rightScrollBar:     true
+xterm*loginShell:         true
+xterm*jumpScroll:         true
+xterm*multiScroll:        true
+xterm*toolBar:            false
+xterm*charClass: 33:48, 35:48, 37:48, 42-43:48, 45-47:48, 58:48, 61:48, 63-64:48, 126:48
+xterm*on3Clicks: regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
+*VT100*translations: #override Shift <Btn1Up>: exec-formatted("chrome '%t'", PRIMARY)
+
+! URxvt settings ---------------------------------------------------------------
+URxvt.font: xft:Cozette:antialias=false
+URxvt.boldFont:
+URxvt.scrollBar: false
+
+URxvt*cursorColor:                    #d1d4e0
+URxvt*scrollColor:                    #d1d4e0
+URxvt*highlightColor:                 #252936
+URxvt*highlightTextColor:             #C0C5CE
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: chrome
+URxvt.matcher.button: 1
+
+! special
+*.foreground:   #000000
+*.background:   #EEEEEE
+/* *.cursorColor:  #ffffff */
+
+! black
+*.color0:       #000000
+*.color8:       #585858
+
+! red
+*.color1:       #D70000
+*.color9:       #D70000
+
+! green
+*.color2:       #005F00
+*.color10:      #005F00
+
+! yellow
+*.color3:       #D75F00
+*.color11:      #D75F00
+
+! blue
+*.color4:       #005FD7
+*.color12:      #005FD7
+
+! magenta
+*.color5:       #5F00D7
+*.color13:      #5F00D7
+
+! cyan
+*.color6:       #0087AF
+*.color14:      #0087AF
+
+! white
+*.color7:       #B2B2B2
+*.color15:      #B2B2B2
+

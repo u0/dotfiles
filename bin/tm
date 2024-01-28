@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# abort if we're already inside a TMUX session
+[ "$TMUX" == "" ] || exit 0
+# startup a "default" session if non currently exists
+# tmux has-session -t _default || tmux new-session -s _default -d
+
+# present menu for user to choose which workspace to open
+PS3="Please choose your session: "
+options=("dev w/o irc" "dev w/ irc")
+echo "Available sessions"
+echo "------------------"
+echo " "
+select opt in "${options[@]}"
+do
+	case $opt in
+		"dev w/o irc")
+			tmux new-session -d -n dev
+			tmux selectw -t 0
+			tmux -2 attach-session -d
+			break
+			;;
+		"dev w/ irc")
+			tmux new-session -d -s dev
+			tmux selectw -t 0
+			tmux new-window -d -t dev -n irc
+            tmux send-keys -t '=dev:=irc' 'irssi' Enter
+            tmux attach-session -t dev
+			break
+			;;
+		*)
+			break
+			;;
+	esac
+done

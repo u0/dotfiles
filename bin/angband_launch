@@ -1,0 +1,11 @@
+#!/bin/sh
+
+export ANGBAND_X11_FONT_0=9x15
+export ANGBAND_X11_FONT_1=6x10
+export ANGBAND_X11_FONT_2=6x10
+export ANGBAND_X11_FONT_3=6x10
+export ANGBAND_X11_FONT_4=6x10
+export ANGBAND_X11_FONT_5=6x10
+export ANGBAND_X11_FONT_6=6x10
+
+angband -- -n4 &

@@ -34,7 +34,7 @@ bind-key 4S-6           window-movetogroup-6
 bind-key 4S-7           window-movetogroup-7
 bind-key 4S-8           window-movetogroup-8
 bind-key 4S-9           window-movetogroup-9
-bind-key 4S-q            window-close
+bind-key 4S-q           window-close
 bind-key 4-Tab          window-cycle
 bind-key 4-f            window-maximize
 bind-key 4-v            window-vtile
@@ -48,8 +48,8 @@ bind-mouse              4S-1 window-resize
 bind-mouse              4-1 window-move
 bind-mouse              4-2 window-lower
 
-color activeborder      "#000000"
-color inactiveborder    "#bcbcbc"
-color menubg            "#EEEEEE"
-color menufg            "#000000"
-color font              "#000000"
+color activeborder      "#bcbcbc"
+color inactiveborder    "#262626"
+color menubg            "#000000"
+color menufg            "#eeeeee"
+color font              "#eeeeee"

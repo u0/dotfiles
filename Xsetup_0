@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Credits: https://zakaria.org/posts/2021-01-04-xenodm.html
+
 # set background
 /usr/X11R6/bin/xsetroot -solid \#000000
 

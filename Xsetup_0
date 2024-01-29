@@ -2,13 +2,9 @@
 
 # Credits: https://zakaria.org/posts/2021-01-04-xenodm.html
 
-# set background
 /usr/X11R6/bin/xsetroot -solid \#000000
-
-# add Dina font to font list
 /usr/X11R6/bin/xset fp+ /usr/local/share/fonts/dina
 
-# status bar
 (
 while true; do
 	reboot="%{F#b00035}%{A:reboot:} r %{A}%{F-}"

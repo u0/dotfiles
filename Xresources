@@ -19,6 +19,7 @@ xterm*backarrowKeyIsErase: 	true
 xterm*scrollTtyKeypress:  	true
 xterm*scrollTtyOutput:    	false
 xterm*scrollBar:          	false
+xterm*selectToClipboard:	true
 xterm*rightScrollBar:     	true
 xterm*loginShell:         	true
 xterm*jumpScroll:         	true
@@ -26,7 +27,12 @@ xterm*multiScroll:        	true
 xterm*toolBar:            	false
 xterm*charClass: 		33:48, 35:48, 37:48, 42-43:48, 45-47:48, 58:48, 61:48, 63-64:48, 126:48
 xterm*on3Clicks: 		regex ([[:alpha:]]+://)?([[:alnum:]!#+,./=?@_~-]|(%[[:xdigit:]][[:xdigit:]]))+
-*VT100*translations: 		#override Shift <Btn1Up>: exec-formatted("chrome '%t'", PRIMARY)
+*VT100*translations: 		#override \
+				Shift Ctrl<Key>V: insert-selection(CLIPBOARD) \n\
+				Shift Ctrl<Key>V: insert-selection(PRIMARY) \n\
+				Shift<Btn1Down>: select-start() \n\
+				Shift<Btn1Motion>: select-extend() \n\
+				Shift<Btn1Up>: select-end(CLIPBOARD) \n\
 
 ! URxvt settings ---------------------------------------------------------------
 URxvt.font: 			xft:Cozette:antialias=false
@@ -77,8 +83,8 @@ XConsole*font:		fixed
 
 ! Colour scheme settings ------------------------------------------------------
 ! special
-*.foreground:   #000000
-*.background:   #EEEEEE
+*.foreground:   #EEEEEE
+*.background:   #000000
 
 ! black
 *.color0:       #000000

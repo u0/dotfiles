@@ -9,7 +9,7 @@ export EDITOR="vim"
 export LANG=en_US.UTF-8
 
 # X11 modifications, background, cursor, merge .Xresources
-${EXEC_PREFIX}/bin/xsetroot -solid dimgray
+${EXEC_PREFIX}/bin/xsetroot -solid \#000000
 ${EXEC_PREFIX}/bin/xsetroot -cursor_name left_ptr
 ${EXEC_PREFIX}/bin/xrdb -merge "$HOME/.Xresources"
 

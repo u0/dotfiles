@@ -1,27 +1,18 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
-PREFIX="/usr/X11R6"
-EXEC_PREFIX="${PREFIX}"
+# set background
+/usr/X11R6/bin/xsetroot -solid \#000000
 
-BARHEIGHT=12
-FG_COLOUR="#eeeeee"
-BG_COLOUR="#000000"
+# add Dina font to font list
+/usr/X11R6/bin/xset fp+ /usr/local/share/fonts/dina
 
-${EXEC_PREFIX}/bin/xsetroot -solid ${BG_COLOUR}
-
-if pgrep lemonbar > /dev/null; then
-    killall lemonbar
-fi
-
-monitors=$(xrandr | grep -o "^.* connected" | sed "s/ connected//" | wc -l)
-
+# status bar
+(
 while true; do
 	reboot="%{F#b00035}%{A:reboot:} r %{A}%{F-}"
 	shutdown="%{F#b00035}%{A:shutdown -p now:} p %{A}%{F-}"
-	panel_layout="%{r}${reboot}/${shutdown}"
-	if [ $monitors -gt 1 ]; then
-        	echo "%{Sl}${panel_layout}%{Sf}${panel_layout} "
-   	else
-        	echo "${panel_layout} "
-    	fi
-done | /usr/local/bin/lemonbar -d -g x"${BARHEIGHT}" -B "${BGCOLOR}" -F "${FGCOLOR}" | sh > /dev/null 2>&1
+	
+	echo "  $(date '+%T') %{r}${reboot}/${shutdown}  $(date '+%F') "
+	sleep 1
+done | /usr/local/bin/lemonbar -d -g 1900x20+10+10 -f 'dinamedium8' -B \#000000 -F \#eeeeee | sh
+) &

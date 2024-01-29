@@ -1,10 +1,9 @@
 #!/usr/bin/env sh
 
-MAINFONT="6x10"
-ICONFONT="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
-BARHEIGHT=12
-FGCOLOR="#000000"
-BGCOLOR="#EEEEEE"
+MAINFONT="dinamedium8"
+BARHEIGHT="1900x20+10+10"
+FGCOLOR="#EEEEEE"
+BGCOLOR="#000000"
 
 clock() {
 	TIME=`date +"%a %b %Y %T"`
@@ -75,7 +74,7 @@ tasks() {
 }
 
 if pgrep lemonbar > /dev/null; then
-    killall lemonbar
+	doas pkill -9 lemonbar
 fi
 
 monitors=$(xrandr | grep -o "^.* connected" | sed "s/ connected//" | wc -l)
@@ -92,4 +91,4 @@ while true; do
         echo "${panel_layout} "
     fi
 
-done | lemonbar -d -g x"${BARHEIGHT}" -B "${BGCOLOR}" -F "${FGCOLOR}" -f "$MAINFONT" | sh > /dev/null 2>&1
+done | lemonbar -d -g "${BARHEIGHT}" -B "${BGCOLOR}" -F "${FGCOLOR}" -f "$MAINFONT" | sh > /dev/null 2>&1
